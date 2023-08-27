@@ -20,13 +20,13 @@ const { secret } = require('../config');
 
 const auth = jwt({ secret });
 
-router.get('/', find);
-router.post('/', create);
-router.get('/:id', findById);
+router.get('/', find); // ok
+router.post('/', create); // ok
+router.get('/:id', findById); // ok
 // router.patch('/:id',  checkOwner, update);
-router.patch('/:id', auth, checkOwner, update);
-router.delete('/:id', auth, checkOwner, del);
-router.post('/login', login);
+router.patch('/:id', auth, checkOwner, update); // ok
+router.delete('/:id', auth, checkOwner, del); // ok
+router.post('/login', login); // ok
 router.get('/:id/following', listFollowing);
 router.get('/:id/followers', listFollowers);
 router.put('/following/:id', auth, checkUserExist, follow);
